@@ -17,6 +17,7 @@ public class UISelectablePort : MonoBehaviour {
             return false;
         }
     }
+    [SerializeField] Selectable error;
 
     // Start is called before the first frame update
     void Start() {
@@ -44,7 +45,7 @@ public class UISelectablePort : MonoBehaviour {
                 if (move != null) {
                     this.eventSystem.SetSelectedGameObject(move);
                     break;
-                }
+                } else this.eventSystem.SetSelectedGameObject(error.gameObject);
             }
         }
     }
